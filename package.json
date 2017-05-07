@@ -1,0 +1,27 @@
+{
+  "name": "bnetjavascriptapi",
+  "version": "1.0.0",
+  "description": "Classic Battle.Net JavaScript API library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel lib -d oldjslib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JFGHT/Classic-BattleNet-JavaScript-API.git"
+  },
+  "author": "GhoST",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JFGHT/Classic-BattleNet-JavaScript-API/issues"
+  },
+  "homepage": "https://github.com/JFGHT/Classic-BattleNet-JavaScript-API#readme",
+  "dependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.4.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1"
+  }
+}
