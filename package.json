@@ -1,5 +1,5 @@
 {
-  "name": "bnetjavascriptapi",
+  "name": "classic-bnet-javascript-api",
   "version": "1.0.0",
   "description": "Classic Battle.Net JavaScript API library",
   "main": "index.js",
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/JFGHT/Classic-BattleNet-JavaScript-API.git"
   },
-  "author": "GhoST",
+  "author": "Jesús <jesusfght@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JFGHT/Classic-BattleNet-JavaScript-API/issues"
