@@ -2,7 +2,7 @@
 /*
 	errors tracking object
 */
-export let errors = {
+export const errors = {
 	6: {
 		5: `Request timeout`,
 		8: `Hit rate limit`
@@ -16,8 +16,8 @@ export let errors = {
 /*
 	Requests
 */
-export let authenticate = (request_id, api_key) => {
-	let request = {
+export const authenticate = (request_id, api_key) => {
+	const request = {
 		command: `Botapiauth.AuthenticateRequest`,
 		request_id,
 		payload: {
@@ -28,8 +28,8 @@ export let authenticate = (request_id, api_key) => {
 	return JSON.stringify(request);
 }
 
-export let connect = (request_id) => {
-	let request = {
+export const connect = (request_id) => {
+	const request = {
 		command: `Botapichat.ConnectRequest`,
 		request_id,
 		payload: {}
@@ -38,8 +38,8 @@ export let connect = (request_id) => {
 	return JSON.stringify(request);
 }
 
-export let disconnect = (request_id) => {
-	let request = {
+export const disconnect = (request_id) => {
+	const request = {
 		command: `Botapichat.DisconnectRequest`,
 		request_id,
 		payload: {}
@@ -48,8 +48,8 @@ export let disconnect = (request_id) => {
 	return JSON.stringify(request);
 }
 
-export let sendMessage = (request_id, message) => {
-	let request = {
+export const sendMessage = (request_id, message) => {
+	const request = {
 		command: `Botapichat.DisconnectRequest`,
 		request_id,
 		payload: {
@@ -60,8 +60,8 @@ export let sendMessage = (request_id, message) => {
 	return JSON.stringify(request);
 }
 
-export let sendWhisper = (request_id, message, user_id) => {
-	let request = {
+export const sendWhisper = (request_id, message, user_id) => {
+	const request = {
 		command: `Botapichat.DisconnectRequest`,
 		request_id,
 		payload: {
@@ -76,8 +76,8 @@ export let sendWhisper = (request_id, message, user_id) => {
 /*
 	Responses
 */
-export let readResponse = (response) => {
-	let responseParsed = JSON.parse(response), responseObject = {
+export const readResponse = (response) => {
+	const responseParsed = JSON.parse(response), responseObject = {
 		type: ``,
 		request_id: null,
 		status: {
@@ -112,8 +112,8 @@ export let readResponse = (response) => {
 /*
 	Async events
 */
-export let readEvent = (event) => {
-	let eventParsed = JSON.parse(event), eventObject = {
+export const readEvent = (event) => {
+	const eventParsed = JSON.parse(event), eventObject = {
 		type: ``,
 		payload: {}
 	};
