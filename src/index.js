@@ -50,7 +50,7 @@ export const disconnect = (request_id) => {
 
 export const sendMessage = (request_id, message) => {
 	const request = {
-		command: `Botapichat.DisconnectRequest`,
+		command: `Botapichat.SendMessageRequest`,
 		request_id,
 		payload: {
 			message
@@ -62,7 +62,7 @@ export const sendMessage = (request_id, message) => {
 
 export const sendWhisper = (request_id, message, user_id) => {
 	const request = {
-		command: `Botapichat.DisconnectRequest`,
+		command: `Botapichat.SendWhisperRequest`,
 		request_id,
 		payload: {
 			message,
