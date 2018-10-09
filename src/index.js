@@ -26,7 +26,7 @@ export const authenticate = (request_id, api_key) => {
 	};
 
 	return JSON.stringify(request);
-}
+};
 
 export const connect = (request_id) => {
 	const request = {
@@ -36,7 +36,7 @@ export const connect = (request_id) => {
 	};
 
 	return JSON.stringify(request);
-}
+};
 
 export const disconnect = (request_id) => {
 	const request = {
@@ -46,7 +46,7 @@ export const disconnect = (request_id) => {
 	};
 
 	return JSON.stringify(request);
-}
+};
 
 export const sendMessage = (request_id, message) => {
 	const request = {
@@ -58,7 +58,19 @@ export const sendMessage = (request_id, message) => {
 	};
 
 	return JSON.stringify(request);
-}
+};
+
+export const sendEmote = (request_id, message) => {
+	const request = {
+		command: `Botapichat.SendEmoteRequest`,
+		request_id,
+		payload: {
+			message
+		}
+	};
+
+	return JSON.stringify(request);
+};
 
 export const sendWhisper = (request_id, message, user_id) => {
 	const request = {
@@ -71,7 +83,55 @@ export const sendWhisper = (request_id, message, user_id) => {
 	};
 
 	return JSON.stringify(request);
-}
+};
+
+export const kickUser = (request_id, user_id) => {
+	const request = {
+		command: `Botapichat.KickUserRequest`,
+		request_id,
+		payload: {
+			user_id
+		}
+	};
+
+	return JSON.stringify(request);
+};
+
+export const banUser = (request_id, user_id) => {
+	const request = {
+		command: `Botapichat.BanUserRequest`,
+		request_id,
+		payload: {
+			user_id
+		}
+	};
+
+	return JSON.stringify(request);
+};
+
+export const unBanUser = (request_id, toon_name) => {
+	const request = {
+		command: `Botapichat.UnbanUserRequest`,
+		request_id,
+		payload: {
+			toon_name
+		}
+	};
+
+	return JSON.stringify(request);
+};
+
+export const setModerator = (request_id, user_id) => {
+	const request = {
+		command: `Botapichat.SendSetModeratorRequest`,
+		request_id,
+		payload: {
+			user_id
+		}
+	};
+
+	return JSON.stringify(request);
+};
 
 /*
 	Responses
@@ -107,7 +167,7 @@ export const readResponse = (response) => {
 	responseObject.status.code = responseParsed.status.code;
 
 	return responseObject;
-}
+};
 
 /*
 	Async events
@@ -146,4 +206,4 @@ export const readEvent = (event) => {
 	eventObject.payload = eventParsed.payload;
 
 	return eventObject;
-}
+};
