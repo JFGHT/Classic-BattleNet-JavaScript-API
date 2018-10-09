@@ -1,11 +1,11 @@
 {
   "name": "classic-bnet-javascript-api",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "Classic Battle.Net JavaScript API library",
-  "main": "index.js",
+  "main": "commonjs/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel lib -d oldjslib"
+    "build": "babel src -d commonjs"
   },
   "repository": {
     "type": "git",

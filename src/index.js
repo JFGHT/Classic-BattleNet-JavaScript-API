@@ -2,7 +2,7 @@
 /*
 	errors tracking object
 */
-export let errors = {
+export const errors = {
 	6: {
 		5: `Request timeout`,
 		8: `Hit rate limit`
@@ -16,8 +16,8 @@ export let errors = {
 /*
 	Requests
 */
-export let authenticate = (request_id, api_key) => {
-	let request = {
+export const authenticate = (request_id, api_key) => {
+	const request = {
 		command: `Botapiauth.AuthenticateRequest`,
 		request_id,
 		payload: {
@@ -26,31 +26,31 @@ export let authenticate = (request_id, api_key) => {
 	};
 
 	return JSON.stringify(request);
-}
+};
 
-export let connect = (request_id) => {
-	let request = {
+export const connect = (request_id) => {
+	const request = {
 		command: `Botapichat.ConnectRequest`,
 		request_id,
 		payload: {}
 	};
 
 	return JSON.stringify(request);
-}
+};
 
-export let disconnect = (request_id) => {
-	let request = {
+export const disconnect = (request_id) => {
+	const request = {
 		command: `Botapichat.DisconnectRequest`,
 		request_id,
 		payload: {}
 	};
 
 	return JSON.stringify(request);
-}
+};
 
-export let sendMessage = (request_id, message) => {
-	let request = {
-		command: `Botapichat.DisconnectRequest`,
+export const sendMessage = (request_id, message) => {
+	const request = {
+		command: `Botapichat.SendMessageRequest`,
 		request_id,
 		payload: {
 			message
@@ -58,11 +58,23 @@ export let sendMessage = (request_id, message) => {
 	};
 
 	return JSON.stringify(request);
-}
+};
 
-export let sendWhisper = (request_id, message, user_id) => {
-	let request = {
-		command: `Botapichat.DisconnectRequest`,
+export const sendEmote = (request_id, message) => {
+	const request = {
+		command: `Botapichat.SendEmoteRequest`,
+		request_id,
+		payload: {
+			message
+		}
+	};
+
+	return JSON.stringify(request);
+};
+
+export const sendWhisper = (request_id, message, user_id) => {
+	const request = {
+		command: `Botapichat.SendWhisperRequest`,
 		request_id,
 		payload: {
 			message,
@@ -71,13 +83,61 @@ export let sendWhisper = (request_id, message, user_id) => {
 	};
 
 	return JSON.stringify(request);
-}
+};
+
+export const kickUser = (request_id, user_id) => {
+	const request = {
+		command: `Botapichat.KickUserRequest`,
+		request_id,
+		payload: {
+			user_id
+		}
+	};
+
+	return JSON.stringify(request);
+};
+
+export const banUser = (request_id, user_id) => {
+	const request = {
+		command: `Botapichat.BanUserRequest`,
+		request_id,
+		payload: {
+			user_id
+		}
+	};
+
+	return JSON.stringify(request);
+};
+
+export const unBanUser = (request_id, toon_name) => {
+	const request = {
+		command: `Botapichat.UnbanUserRequest`,
+		request_id,
+		payload: {
+			toon_name
+		}
+	};
+
+	return JSON.stringify(request);
+};
+
+export const setModerator = (request_id, user_id) => {
+	const request = {
+		command: `Botapichat.SendSetModeratorRequest`,
+		request_id,
+		payload: {
+			user_id
+		}
+	};
+
+	return JSON.stringify(request);
+};
 
 /*
 	Responses
 */
-export let readResponse = (response) => {
-	let responseParsed = JSON.parse(response), responseObject = {
+export const readResponse = (response) => {
+	const responseParsed = JSON.parse(response), responseObject = {
 		type: ``,
 		request_id: null,
 		status: {
@@ -107,13 +167,13 @@ export let readResponse = (response) => {
 	responseObject.status.code = responseParsed.status.code;
 
 	return responseObject;
-}
+};
 
 /*
 	Async events
 */
-export let readEvent = (event) => {
-	let eventParsed = JSON.parse(event), eventObject = {
+export const readEvent = (event) => {
+	const eventParsed = JSON.parse(event), eventObject = {
 		type: ``,
 		payload: {}
 	};
@@ -146,4 +206,4 @@ export let readEvent = (event) => {
 	eventObject.payload = eventParsed.payload;
 
 	return eventObject;
-}
+};
